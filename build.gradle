@@ -1,0 +1,49 @@
+//// OLD CONFIGURATION START
+//buildscript {
+//    repositories {
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath 'org.hibernate:hibernate-gradle-plugin:5.6.9.Final'
+//    }
+//}
+//
+//plugins {
+//    id 'java'
+//}
+//
+//apply plugin: 'org.hibernate.orm'
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//hibernate {
+//    enhance {
+//        enableLazyInitialization = true
+//        enableDirtyTracking = true
+//    }
+//}
+//// OLD CONFIGURATION END
+
+// NEW CONFIGURATION START
+plugins {
+    id 'java'
+    id 'org.hibernate.orm' version '6.1.0.Final'
+}
+
+repositories {
+    mavenCentral()
+}
+
+hibernate {
+    enhancement {
+        lazyInitialization = true
+        dirtyTracking = true
+    }
+}
+// NEW CONFIGURATION END
+
+dependencies {
+    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+}
